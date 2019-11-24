@@ -192,3 +192,105 @@
        #+end_example
 
        
+** 逻辑代数基础
+   要点:
+   1. 基本逻辑运算
+   2. 基本公式, 表示方法
+   3. 逻辑函数的化简
+
+*** 逻辑
+    事物的因果关系
+
+    #+begin_quote
+    1854: 产生: 逻辑不仅仅是哲学问题, 也是数学问题 - George Boole
+    Boolean algebra: 所有数值都是二进制值
+    #+end_quote
+
+    #+begin_quote
+    1906 年: 出现真空电子管
+    #+end_quote
+
+*** 逻辑运算
+    当二进制代码表示不同逻辑状态时, 可以按一定的规则进行推理运算
+    
+**** 三种基本运算
+     - 与(AND)
+       条件同时具备, 结果发生
+       ~Y = A *AND* B = A&B = A * B = AB~
+       | A | B | Y |
+       | 0 | 0 | 0 |
+       | 0 | 1 | 0 |
+       | 1 | 0 | 0 |
+       | 1 | 1 | 1 |
+
+       #+begin_example
+       A -- &
+            & -- Y
+       B -- &
+       #+end_example
+
+      #+begin_example
+           A -- --
+                || -- Y
+           B -- --
+      #+end_example
+
+     - 或(OR)
+       条件之一具备, 结果发生
+       ~Y = A *OR* B = A+B~
+       | A | B | Y |
+       | 0 | 0 | 0 |
+       | 0 | 1 | 1 |
+       | 1 | 0 | 1 |
+       | 1 | 1 | 1 |
+
+       #+begin_example
+       A -- 
+           >=1 -- Y
+       B --
+       #+end_example
+
+       #+begin_example
+       A --|-\ 
+           |  > -- Y
+       B --|-/
+       #+end_example
+
+     - 非(NOT)
+       条件不具备, 结果发生
+       ~Y = A' = *NOT* A~
+       | A | Y |
+       | 0 | 1 |
+       | 1 | 0 |
+
+       #+begin_example
+           | |
+       A --|1|o -- Y
+           | |
+       #+end_example
+
+       #+begin_example
+           |\
+       A --| >o -- Y
+           |/
+       #+end_example
+
+       遇 ~o~ 则反
+
+**** 几种复杂逻辑运算
+     - 与非
+       ~Y = (A * B)'~
+     - 或非
+       ~Y = (A + B)'~
+     - 与或非
+       ~Y = (A * B + C * D)'~
+     - 异或
+       ~Y = A ⊕ B~
+
+       | A | B | Y |
+       | 0 | 0 | 0 |
+       | 0 | 1 | 1 |
+       | 1 | 0 | 1 |
+       | 1 | 1 | 0 |
+
+       相同为 0, 不同为 1
